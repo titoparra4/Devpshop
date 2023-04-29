@@ -29,7 +29,9 @@ namespace Devpshop.API.Controllers
 		[HttpGet("{id:int}")]
 		public async Task<IActionResult> GetAsync(int id)
 		{
-			var state = await _context.States.FirstOrDefaultAsync(x => x.Id == id);
+			var state = await _context.States
+				.Include(x => x.Cities)
+				.FirstOrDefaultAsync(x => x.Id == id);
 			if (state == null)
 			{
 				return NotFound();
