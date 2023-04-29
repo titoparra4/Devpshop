@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Devpshop.API", "Devpshop.AP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Devpshop.WEB", "Devpshop.WEB\Devpshop.WEB.csproj", "{8F107567-6D2A-460F-B417-38B6F818AB92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devpshop.Mobile", "Devpshop.Mobile\Devpshop.Mobile.csproj", "{47E8F800-FC79-4E5D-9CD8-E1C25D45773D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Devpshop.Mobile", "Devpshop.Mobile\Devpshop.Mobile.csproj", "{47E8F800-FC79-4E5D-9CD8-E1C25D45773D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
