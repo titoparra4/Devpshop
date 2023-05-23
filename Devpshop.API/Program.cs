@@ -1,5 +1,8 @@
 using Devpshop.API.Data;
+using Devpshop.API.Helpers;
 using Devpshop.API.Services;
+using Devpshop.Shared.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 
@@ -15,6 +18,20 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer("name=DefaultConnection"));
 builder.Services.AddTransient<SeedDb>();
 builder.Services.AddScoped<IApiService, ApiService>();
+builder.Services.AddScoped<IUserHelper, UserHelper>();
+
+builder.Services.AddIdentity<User, IdentityRole>(x =>
+{
+	x.User.RequireUniqueEmail = true;
+	x.Password.RequireDigit = false;
+	x.Password.RequiredUniqueChars = 0;
+	x.Password.RequireLowercase = false;
+	x.Password.RequireNonAlphanumeric = false;
+	x.Password.RequireUppercase = false;
+})
+	.AddEntityFrameworkStores<DataContext>()
+	.AddDefaultTokenProviders();
+
 
 var app = builder.Build();
 SeedData(app);
@@ -39,6 +56,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseAuthentication();
 
 app.UseAuthorization();
 
