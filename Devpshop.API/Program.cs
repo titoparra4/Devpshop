@@ -20,6 +20,7 @@ builder.Services.AddTransient<SeedDb>();
 builder.Services.AddScoped<IApiService, ApiService>();
 builder.Services.AddScoped<IUserHelper, UserHelper>();
 
+
 builder.Services.AddIdentity<User, IdentityRole>(x =>
 {
 	x.User.RequireUniqueEmail = true;
@@ -31,6 +32,10 @@ builder.Services.AddIdentity<User, IdentityRole>(x =>
 })
 	.AddEntityFrameworkStores<DataContext>()
 	.AddDefaultTokenProviders();
+
+
+
+
 
 
 var app = builder.Build();

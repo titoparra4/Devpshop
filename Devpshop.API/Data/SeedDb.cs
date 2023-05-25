@@ -29,6 +29,7 @@ namespace Devpshop.API.Data
 
 		}
 
+
 		private async Task<User> CheckUserAsync(string document, string firstName, string lastName, string email, string phone, string address, UserType userType)
 		{
 			var user = await _userHelper.GetUserAsync(email);
@@ -59,7 +60,6 @@ namespace Devpshop.API.Data
 			await _userHelper.CheckRoleAsync(UserType.Admin.ToString());
 			await _userHelper.CheckRoleAsync(UserType.User.ToString());
 		}
-
 
 		private async Task CheckCountriesAsync()
         {
