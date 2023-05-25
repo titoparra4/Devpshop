@@ -54,5 +54,4 @@ namespace Devpshop.API.Helpers
 			return await _userManager.IsInRoleAsync(user, roleName);
 		}
 	}
-
 }

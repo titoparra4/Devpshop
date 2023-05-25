@@ -14,6 +14,6 @@ namespace Devpshop.API.Helpers
 		Task AddUserToRoleAsync(User user, string roleName);
 
 		Task<bool> IsUserInRoleAsync(User user, string roleName);
-
 	}
+
 }
